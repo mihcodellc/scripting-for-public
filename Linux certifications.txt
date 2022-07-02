@@ -1,0 +1,45 @@
+1. 1
+2. 2,3
+3. false
+4. 1,2,3,4
+5. all except 4
+6. 1to4
+7. 1
+8. false
+9. true
+10. 2 man -k, apropos, whatis
+11. 4
+12. 4
+13. usr ie non critical - bin user utilities - etc ie config
+14. 1
+15. all
+16. tar - J ie tarball -j bzip2
+17. top ps free
+18. 3 free
+19. vi, nano, emacs
+20. 1
+21. $? status $0 scriptName $1 firstParameter
+22. etc/shadow old etc/passwd
+23. 4 standard
+24. passwd/chage username
+25. yes
+26. 4. chown or chgrp 
+27. .filename ie hidden
+28. ip or nmcli to set
+29. ping for ICMP
+
+
+ctrl+F2 or F3 text mode prompt
+ctrl+F1 or F7 GUI login prompt
+
+Apply Gui around Unix > macos
+macOS user interface is known as Cocoa from a programming perspective, or Aqua  from a user’s point of view
+
+unix & Unix program > macOS but the reverse
+
+package format: debian, rpm, ebuild, tarballs
+
+CentOS, Slackware, and Gentoo Linux distributions:advanced Users
+Fedora, Ubuntu, and Mint Linux distributions:NOVICE
+
+
