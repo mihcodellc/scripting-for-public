@@ -42,4 +42,6 @@ package format: debian, rpm, ebuild, tarballs
 CentOS, Slackware, and Gentoo Linux distributions:advanced Users
 Fedora, Ubuntu, and Mint Linux distributions:NOVICE
 
+copyright, trademarks, software patents
+Licenses to Modify Copyright terms
 
