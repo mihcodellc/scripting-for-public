@@ -10,3 +10,21 @@ ls -lh *Archive*.bak
 cat <mail_folder>
 #purge mail folder
 > <mail_folder>
+
+
+#
+sudo su - <exec as user name>
+#edit the crontab -e  -- in nano ctrl+x (exit)  OR ctrl+O (write)
+# m h  dom mon dow   command
+# */20 * * * * /home/mbello/test.sh >/home/mbello/log # every 20 minutes
+crontab -e 
+
+
+
+crontab -l
+./test.sh
+clear
+tail -n 50 log
+exit
+df
+du
