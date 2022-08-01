@@ -5,3 +5,8 @@ echo "$file has a size of $filesize"
 
 # size with h after -l
 ls -lh *Archive*.bak
+
+#read mail folder
+cat <mail_folder>
+#purge mail folder
+> <mail_folder>
