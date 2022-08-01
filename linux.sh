@@ -14,17 +14,22 @@ cat <mail_folder>
 
 #
 sudo su - <exec as user name>
-#edit the crontab -e  -- in nano ctrl+x (exit)  OR ctrl+O (write)
+#edit the crontab -e  -- in nano ctrl+x (exit) + Y/N + Enter  OR ctrl+O (write)
 # m h  dom mon dow   command
 # */20 * * * * /home/mbello/test.sh >/home/mbello/log # every 20 minutes
 crontab -e 
 
 
-
+# read crontab content
 crontab -l
+
+# execute test.sh
 ./test.sh
 clear
+
+# read last 50 lines of log files
 tail -n 50 log
 exit
-df
-du
+
+#disk space usage files/ directories
+df #du
