@@ -1,9 +1,22 @@
+#use help in command ligne: 
+#   man [option].. [command name]..
+#    man -k [key_word] # relevant
+#    man -a [key_word] # all mathcing 
+# https://www.tutorialkart.com/bash-shell-scripting/bash-current-date-and-time/
+# https://linuxgazette.net/18/bash.html
+#https://doc.ubuntu-fr.org/tutoriel/learn_unix_in_10_minutes
+#https://www.gnu.org/software/bash/manual/bash.html#Looping-Constructs
+#https://linux.die.net/man/1/bash
+#https://www.guru99.com/linux-commands-cheat-sheet.html#:~:text=%20%20%20%20Command%20%20%20,with%20detaile%20...%20%2025%20more%20rows%20
+
 echo "Enter the full path to the file."
 read file
 filesize=$(ls -lh $file | awk '{print  $5}')
 echo "$file has a size of $filesize"
 
-# size with h after -l
+# size with h after -l ie h = human-readable
+# WITHOUT h the value is express in bytes 1MB = 1,048,576 Bytes 
+# https://www.gbmb.org/mb-to-bytes
 ls -lh *Archive*.bak
 
 #read mail folder
@@ -12,6 +25,7 @@ cat <mail_folder>
 > <mail_folder>
 
 
+#https://www.sitepoint.com/cron-jobs/
 # https://linuxhandbook.com/crontab/
 sudo su - <exec as user name>
 #edit the crontab -e  -- in nano ctrl+x (exit) + Y/N + Enter  OR ctrl+O (write)
