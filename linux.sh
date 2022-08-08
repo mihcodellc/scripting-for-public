@@ -12,7 +12,7 @@ cat <mail_folder>
 > <mail_folder>
 
 
-#
+# https://linuxhandbook.com/crontab/
 sudo su - <exec as user name>
 #edit the crontab -e  -- in nano ctrl+x (exit) + Y/N + Enter  OR ctrl+O (write)
 # m h  dom mon dow   command
