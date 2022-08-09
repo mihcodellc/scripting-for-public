@@ -17,6 +17,11 @@ echo "$file has a size of $filesize"
 # size with h after -l ie h = human-readable
 # WITHOUT h the value is express in bytes 1MB = 1,048,576 Bytes 
 # https://www.gbmb.org/mb-to-bytes
+# https://linuxhint.com/what-does-ls-l-command-do-in-linux/
+# -F “/” after the name of a directory
+# -r sort the output in reverse order
+# -t sort the files and directories by time and date
+# -a show the hidden files
 ls -lh *Archive*.bak
 
 #read mail folder
