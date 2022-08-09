@@ -24,8 +24,10 @@ echo "$file has a size of $filesize"
 # -a show the hidden files
 ls -lh *Archive*.bak
 
-#count files without hidden files
+#count files+directories without hidden files
 ls | wc -l
+find . -type f | wc -l # only files
+find . -maxdepth 1 -type f | wc -l # files in current directories
 
 #read mail folder
 cat <mail_folder>
