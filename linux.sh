@@ -24,6 +24,9 @@ echo "$file has a size of $filesize"
 # -a show the hidden files
 ls -lh *Archive*.bak
 
+#count files without hidden files
+ls | wc -l
+
 #read mail folder
 cat <mail_folder>
 #purge mail folder
