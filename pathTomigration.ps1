@@ -6,28 +6,28 @@ Get-Command -Name *name* -Module dbatools -Type Function
 $Env:PSModulePath = $Env:PSModulePath+";S:\DBA\dbatools"
 
 
-$cred = Get-Credential rms-asp\mbello
+$cred = Get-Credential mydomain\mbello
 
 
-Copy-DbaSpConfigure -Source sql-test001 -SourceSqlCredential $cred  -Destination sql-test002 -DestinationSqlCredential $cred | out-file -FilePath C:\Users\mbello\Documents\DbatoolsExport\copylog.txt
-Copy-DbaDbMail -Source sql-test001 -SourceSqlCredential $cred  -Destination sql-test002 -DestinationSqlCredential $cred | out-file -FilePath C:\Users\mbello\Documents\DbatoolsExport\copylog.txt
-Copy-DbaLinkedServer -Source sql-test001 -SourceSqlCredential $cred  -Destination sql-test002 -DestinationSqlCredential $cred | out-file -FilePath C:\Users\mbello\Documents\DbatoolsExport\copylog.txt
+Copy-DbaSpConfigure -Source instance-test001 -SourceSqlCredential $cred  -Destination instance-test002 -DestinationSqlCredential $cred | out-file -FilePath C:\copylog.txt
+Copy-DbaDbMail -Source instance-test001 -SourceSqlCredential $cred  -Destination instance-test002 -DestinationSqlCredential $cred | out-file -FilePath C:\copylog.txt
+Copy-DbaLinkedServer -Source instance-test001 -SourceSqlCredential $cred  -Destination instance-test002 -DestinationSqlCredential $cred | out-file -FilePath C:\copylog.txt
 
-$cred = Get-Credential rms-asp\mbello
+$cred = Get-Credential mydomain\mbello
 
 # need domain user running sql engine, sqlagent - the sharedPath is used to backup then from there restore
-Copy-DbaDatabase -Source sql-test001 -SourceSqlCredential $cred  -Destination sql-test002 -DestinationSqlCredential $cred -database WideWorldImporters,testBello -backupRestore -SharedPath \\sql-test001\Sql_Backup  | out-file -FilePath C:\Users\mbello\Documents\DbatoolsExport\copylog.txt
+Copy-DbaDatabase -Source instance-test001 -SourceSqlCredential $cred  -Destination instance-test002 -DestinationSqlCredential $cred -database WideWorldImporters,testBello -backupRestore -SharedPath \\instance-test001\Sql_Backup  | out-file -FilePath C:\copylog.txt
 
 
 # migrate everything except Databases, Logins, Jobs
 #using this command, if jobs copying is not exclude(ie AgentServer); it is a mess, what else is a mess. I cannot create some jobs like one named as "DD69B1C1-9BC3-4CC9-97CC-446ED6FF6497"
-Start-DbaMigration -Verbose -Source asp-sql  -SourceSqlCredential $cred -Destination asp-sql-new3  -DestinationSqlCredential $cred -Exclude Databases, Logins, AgentServer | out-file -FilePath C:\Users\mbello\Documents\copylog.txt
+Start-DbaMigration -Verbose -Source asp-sql  -SourceSqlCredential $cred -Destination asp-sql-new3  -DestinationSqlCredential $cred -Exclude Databases, Logins, AgentServer | out-file -FilePath C:\copylog.txt
 
 #existing ones are drop and recreate
-Copy-DbaLogin -Source sql-test001 -SourceSqlCredential $cred  -Destination sql-test002 -DestinationSqlCredential $cred -Force | out-file -FilePath C:\Users\mbello\Documents\DbatoolsExport\copylog.txt
+Copy-DbaLogin -Source instance-test001 -SourceSqlCredential $cred  -Destination instance-test002 -DestinationSqlCredential $cred -Force | out-file -FilePath C:\copylog.txt
 
 #existing ones are drop and recreate
-Copy-DbaAgentJob -Source sql-test001 -SourceSqlCredential $cred  -Destination sql-test002 -DestinationSqlCredential $cred -Force | out-file -FilePath C:\Users\mbello\Documents\DbatoolsExport\copylog.txt
+Copy-DbaAgentJob -Source instance-test001 -SourceSqlCredential $cred  -Destination instance-test002 -DestinationSqlCredential $cred -Force | out-file -FilePath C:\copylog.txt
 
 
 #rename the instance
