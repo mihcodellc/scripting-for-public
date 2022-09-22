@@ -43,8 +43,20 @@ Arch, Slackware, and Gentoo Linux distributions:advanced Users
 Fedora, Debian, CentOS(free RedHat), OpenSUSE, Redhat: Intermediate
 Ubuntu, and Mint Linux distributions:NOVICE
 
-destop environment: GNOME, KDE Plasma, Cinnamon, and Xfce
+desktop environment: GNOME, KDE Plasma, Cinnamon, and Xfce
 
 copyright, trademarks, software patents
 Licenses to Modify Copyright terms
 
+ Free Software Foundation (FSF) => GPL Licence: GPLv2 & GPLv3 <> LGPL lead to commercial
+ freedoom to Use, Examine, Redistribute software(included modified version) = GPLv3 
+ 
+ OSI (Open Source Initiative) : modified version can be commercialize
+ 
+ Creative Commons  more broader than FSF and the OSI promoting software freedoms
+      help creators retain their works’ copyrights 
+ 
+
+ 
+ copyleft VS copyright
+a license, which is a legal document that claims to modify the rights granted by copyright law. 
