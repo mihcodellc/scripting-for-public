@@ -63,3 +63,14 @@ df #du
 
 #remove
 rm  -fv  *abc*202207*.trn
+
+ #-atime n => File was last accessed n*24 hours ago
+ #-cmin n  => File's status was last changed n minutes ago
+ #-mmin n  => File's data was last modified n minutes ago
+ #-mtime n => File's data was last modified n*24 hours ago
+ #-empty   => File is empty and is either a regular file or a directory
+ #-executable => Matches  files  which  are executable and directories which are searchable
+ #-exec command => Execute  command;  true  if 0 status is returned.
+ #-regex pattern =>  File name matches regular expression pattern.  This is a match on the whole path
+ #return/search file *.trn last modified a day ago order by time
+find -name *.trn -mtime 1 -exec ls -lth "{}" \;
