@@ -9,6 +9,10 @@
 #https://linux.die.net/man/1/bash
 #https://www.guru99.com/linux-commands-cheat-sheet.html#:~:text=%20%20%20%20Command%20%20%20,with%20detaile%20...%20%2025%20more%20rows%20
 
+#log as user
+sudo su - user
+
+
 echo "Enter the full path to the file."
 read file
 filesize=$(ls -lh $file | awk '{print  $5}')
