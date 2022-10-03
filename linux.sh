@@ -62,3 +62,6 @@ exit
 
 #disk space usage files/ directories
 df #du
+
+#remove
+rm  -fv  *abc*202207*.trn
