@@ -27,7 +27,8 @@ echo "$file has a size of $filesize"
 # -t sort the files and directories by time and date
 # -a show the hidden files
 # combine with | head -10 => to list top 10
-ls -lh *Archive*.bak
+ls -lth *Archive*.bak # files
+ls -lth LOGSHIPPING_COPY | tail -15   # files in folder named LOGSHIPPING_COPY
 
 #count files+directories without hidden files
 ls | wc -l
