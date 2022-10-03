@@ -22,6 +22,7 @@ echo "$file has a size of $filesize"
 # -r sort the output in reverse order
 # -t sort the files and directories by time and date
 # -a show the hidden files
+# combine with | head -10 => to list top 10
 ls -lh *Archive*.bak
 
 #count files+directories without hidden files
