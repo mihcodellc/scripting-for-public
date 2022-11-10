@@ -1,3 +1,6 @@
+--Linux Command Cheat Sheet
+#https://www.guru99.com/linux-commands-cheat-sheet.html#:~:text=%20%20%20%20Command%20%20%20,with%20detaile%20...%20%2025%20more%20rows%20
+
 #use help in command ligne: 
 #   man [option].. [command name]..
 #    man -k [key_word] # relevant
@@ -7,7 +10,7 @@
 #https://doc.ubuntu-fr.org/tutoriel/learn_unix_in_10_minutes
 #https://www.gnu.org/software/bash/manual/bash.html#Looping-Constructs
 #https://linux.die.net/man/1/bash
-#https://www.guru99.com/linux-commands-cheat-sheet.html#:~:text=%20%20%20%20Command%20%20%20,with%20detaile%20...%20%2025%20more%20rows%20
+
 
 
 echo "Enter the full path to the file."
