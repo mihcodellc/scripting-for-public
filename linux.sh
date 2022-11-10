@@ -13,6 +13,7 @@
 
 #https://www.sitepoint.com/cron-jobs/
 # https://linuxhandbook.com/crontab/
+# postgres login auth psql-error-fix.md on git at https://gist.github.com/mihcodellc/cdfb22b14e6ae77f9335005a8e926681
 sudo su - <exec as user name>
 
 echo "Enter the full path to the file."
