@@ -11,7 +11,9 @@
 #https://www.gnu.org/software/bash/manual/bash.html#Looping-Constructs
 #https://linux.die.net/man/1/bash
 
-
+#https://www.sitepoint.com/cron-jobs/
+# https://linuxhandbook.com/crontab/
+sudo su - <exec as user name>
 
 echo "Enter the full path to the file."
 read file
@@ -41,9 +43,8 @@ cat <mail_folder>
 > <mail_folder>
 
 
-#https://www.sitepoint.com/cron-jobs/
-# https://linuxhandbook.com/crontab/
-sudo su - <exec as user name>
+
+
 #edit the crontab -e  -- in nano ctrl+x (exit) + Y/N + Enter  OR ctrl+O (write)
 # m h  dom mon dow   command
 # */20 * * * * /home/mbello/test.sh >/home/mbello/log # every 20 minutes
