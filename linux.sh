@@ -45,7 +45,7 @@ cat <mail_folder>
 
 
 
-
+# https://tecadmin.net/crontab-in-linux-with-20-examples-of-cron-schedule/#:~:text=20%20Useful%20Examples%20for%20Scheduling%20Crontab%201%20Schedule,to%20execute%20on%20selected%20months.%20...%20More%20items
 #edit the crontab -e  -- in nano ctrl+x (exit) + Y/N + Enter  OR ctrl+O (write)
 # m h  dom mon dow   command
 # */20 * * * * /home/mbello/test.sh >/home/mbello/log # every 20 minutes
