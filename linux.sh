@@ -21,6 +21,9 @@ read file
 filesize=$(ls -lh $file | awk '{print  $5}')
 echo "$file has a size of $filesize"
 
+#size of folder
+du -sh folderPath
+
 # size with h after -l ie h = human-readable
 # WITHOUT h the value is express in bytes 1MB = 1,048,576 Bytes 
 # https://www.gbmb.org/mb-to-bytes
