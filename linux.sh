@@ -23,6 +23,7 @@ echo "$file has a size of $filesize"
 
 #size of folder
 du -sh folderPath
+du -sm * | sort -nr | head -15 #each directory
 
 # size with h after -l ie h = human-readable
 # WITHOUT h the value is express in bytes 1MB = 1,048,576 Bytes 
