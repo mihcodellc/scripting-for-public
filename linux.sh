@@ -1,6 +1,7 @@
 --Linux Command Cheat Sheet
 #https://www.guru99.com/linux-commands-cheat-sheet.html#:~:text=%20%20%20%20Command%20%20%20,with%20detaile%20...%20%2025%20more%20rows%20
 
+
 #use help in command ligne: 
 #   man [option].. [command name]..
 #    man -k [key_word] # relevant
@@ -15,6 +16,7 @@
 # https://linuxhandbook.com/crontab/
 # postgres login auth psql-error-fix.md on git at https://gist.github.com/mihcodellc/cdfb22b14e6ae77f9335005a8e926681
 sudo su - <exec as user name>
+# #cd - cd.. - cd ~ - pwd
 
 echo "Enter the full path to the file."
 read file
