@@ -73,8 +73,9 @@ du -sh folderPath
 du -sm * | sort -nr | head -15 #each directory
 
 #remove
-rm  -fv  *abc*202207*.trn
+rm  -fv  *abc*202207*.trn # rm -r directory
 
+ #-size n => n in b,k,M, G ...bibytes
  #-atime n => File was last accessed n*24 hours ago
  #-cmin n  => File's status was last changed n minutes ago
  #-mmin n  => File's data was last modified n minutes ago
@@ -84,4 +85,4 @@ rm  -fv  *abc*202207*.trn
  #-exec command => Execute  command;  true  if 0 status is returned.
  #-regex pattern =>  File name matches regular expression pattern.  This is a match on the whole path
  #return/search file *.trn last modified a day ago order by time
-find -name *.trn -mtime 1 -exec ls -lth "{}" \;
+find -name *.trn -mtime +1 -exec ls -lth "{}" \; # n = exact -n = less than +n = greater than
