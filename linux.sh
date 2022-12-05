@@ -21,10 +21,8 @@ read file
 filesize=$(ls -lh $file | awk '{print  $5}')
 echo "$file has a size of $filesize"
 
-#size of folder
-du -sh folderPath
-du -sm * | sort -nr | head -15 #each directory
 
+# Files here Directories further down
 # size with h after -l ie h = human-readable
 # WITHOUT h the value is express in bytes 1MB = 1,048,576 Bytes 
 # https://www.gbmb.org/mb-to-bytes
@@ -69,6 +67,10 @@ exit
 
 #disk space usage files/ directories
 df #du
+
+#size of folder
+du -sh folderPath
+du -sm * | sort -nr | head -15 #each directory
 
 #remove
 rm  -fv  *abc*202207*.trn
