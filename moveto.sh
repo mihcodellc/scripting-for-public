@@ -1,26 +1,26 @@
 #!/bin/bash
 #-----------------------------------------------------------------
-# Program:  move_sql002_back.sh
+# Program:  ??????_back.sh
 # Host:     xxxxx  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Replace with name of dedicated storage server
-# Purpose:  Pull the jira database backup to permanent storage
+# Purpose:  Pull the ??? database backup to permanent storage
 # Author:   Craig Yancey, RMS DBA
 # Modified by Monktar Bello: handle for a new server and slight strategy
 #-----------------------------------------------------------------
 # Notes:    To be run by crontab a day after the backup is made.
 #                Once pulled here, the backup will be kept for 30days
-#        then moved with all the others to long term for 60 days.
+#        then moved with all the others to long term for 120 days.
 #-----------------------------------------------------------------
 
 
 # a "mount point" permanently linked to the directory on asp-sql002 where the backup gets created...
 source=/opt/?
 
-# Replace the following with the local path on storage server where the backups will be moved to and then kept for 60 days
+# Replace the following with the local path on storage server where the backups will be moved to and then kept for 120 days
 target=/mnt/?
 
 appid=move_backup_to_shortterm
 
-scripts=/home/rms-svc/scripts
+scripts=/home/mbello/scripts
 logfile=$scripts/$appid.log
 
 msgfile=$scripts/$appid.msg
