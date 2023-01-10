@@ -13,4 +13,8 @@ REM echo %MY_STATUS% %date% %time%
 PAUSE
 
 REM mount a share folder
+REM bat
  NET USE E: \\sql-backups.rms-asp.com\backup /u:domain\user_name my_password /persistent:yes
+REM bash, ubuntu on temp mounted
+sudo mount -t cifs -o username=mbello@rms-asp.com //ipaddress/share_nmae /home/mbello/shared/new3
+ 
