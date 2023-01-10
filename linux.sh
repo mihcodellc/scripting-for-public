@@ -1,8 +1,6 @@
 --Linux Command Cheat Sheet
 #https://www.guru99.com/linux-commands-cheat-sheet.html#:~:text=%20%20%20%20Command%20%20%20,with%20detaile%20...%20%2025%20more%20rows%20
 
-# become a another user
-sudo - su mbello
 
 #use help in command ligne: 
 #   man [option].. [command name]..
