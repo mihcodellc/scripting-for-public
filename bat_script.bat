@@ -12,3 +12,5 @@ REM echo %MY_STATUS% %date% %time%
 
 PAUSE
 
+REM mount a share folder
+ NET USE E: \\sql-backups.rms-asp.com\backup /u:domain\user_name my_password /persistent:yes
