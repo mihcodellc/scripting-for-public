@@ -18,6 +18,15 @@
 sudo su - <exec as user name>
 # #cd - cd.. - cd ~ - pwd
 
+
+# https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/
+# mount a share folder
+# bat
+ NET USE E: \\sql-backups.rms-asp.com\backup /u:domain\user_name my_password /persistent:yes
+# bash, ubuntu on temp mounted
+sudo mount -t cifs -o username=mbello@rms-asp.com //ipaddress/share_nmae /home/mbello/shared/new3
+
+
 echo "Enter the full path to the file."
 read file
 filesize=$(ls -lh $file | awk '{print  $5}')
