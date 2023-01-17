@@ -18,7 +18,7 @@ REM bat
  NET USE E: \\backup /u:domain\user_name my_password /persistent:yes
  REM NET USE E: /delete
 REM bash, ubuntu on temp mounted
-sudo mount -t cifs -o username=mbello@rms-asp.com //ipaddress/share_nmae /home/mbello/shared/new3
+sudo mount -t cifs -o username=mbello@mitiri.com //ipaddress/share_nmae /home/mbello/shared/new3
  
 
 REM copy over with exclude list in file
