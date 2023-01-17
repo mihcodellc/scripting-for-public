@@ -15,7 +15,7 @@ PAUSE
 REM https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/
 REM mount a share folder
 REM bat
- NET USE E: \\sql-backups.rms-asp.com\backup /u:domain\user_name my_password /persistent:yes
+ NET USE E: \\backup /u:domain\user_name my_password /persistent:yes
  REM NET USE E: /delete
 REM bash, ubuntu on temp mounted
 sudo mount -t cifs -o username=mbello@rms-asp.com //ipaddress/share_nmae /home/mbello/shared/new3
