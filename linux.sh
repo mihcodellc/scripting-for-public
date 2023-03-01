@@ -1,6 +1,9 @@
 --Linux Command Cheat Sheet
 #https://www.guru99.com/linux-commands-cheat-sheet.html#:~:text=%20%20%20%20Command%20%20%20,with%20detaile%20...%20%2025%20more%20rows%20
 
+#server name
+nslookup ipaddress
+
 
 #use help in command ligne: 
 #   man [option].. [command name]..
@@ -22,9 +25,9 @@ sudo su - <exec as user name>
 # https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/
 # mount a share folder
 # bat
- NET USE E: \\sql-backups.rms-asp.com\backup /u:domain\user_name my_password /persistent:yes
+ NET USE E: \\mitiristore\backup /u:domain\user_name my_password /persistent:yes
 # bash, ubuntu on temp mounted
-sudo mount -t cifs -o username=mbello@rms-asp.com //ipaddress/share_nmae /home/mbello/shared/new3
+sudo mount -t cifs -o username=mbello@mih.com //ipaddress/share_nmae /home/mbello/shared/new3
 
 
 echo "Enter the full path to the file."
