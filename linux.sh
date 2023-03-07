@@ -26,7 +26,7 @@ sudo su - <exec as user name>
 # mount a share folder
 # bat
  NET USE E: \\mitiristore\backup /u:domain\user_name my_password /persistent:yes
-# bash, ubuntu on temp mounted
+# bash, ubuntu on temp mounted or Use WinSCP or FileZilla
 sudo mount -t cifs -o username=mbello@mih.com //ipaddress/share_nmae /home/mbello/shared/new3
 
 
