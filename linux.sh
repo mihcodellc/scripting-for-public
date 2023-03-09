@@ -107,3 +107,5 @@ find -name *.trn -mtime +1 -exec ls -lth "{}" \; # n = exact -n = less than +n =
 
 #find search  in file
 cat pattern1*.csv pattern2*.csv | grep -i "search_text" > /tmp/db3018.log
+#better use cat is to display 
+cat $(find . -name aaa.txt) | grep -i "search_text" > /tmp/db3018.log
