@@ -101,3 +101,7 @@ rm  -fv  *abc*202207*.trn # rm -r directory
  #-regex pattern =>  File name matches regular expression pattern.  This is a match on the whole path
  #return/search file *.trn last modified a day ago order by time
 find -name *.trn -mtime +1 -exec ls -lth "{}" \; # n = exact -n = less than +n = greater than
+
+
+#find search  in file
+cat pattern1*.csv pattern2*.csv | grep -i "search_text" > /tmp/db3018.log
