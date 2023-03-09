@@ -4,6 +4,8 @@
 #server name
 nslookup ipaddress
 
+# listen port
+sudo netstat -tulpn | grep LISTEN
 
 #use help in command ligne: 
 #   man [option].. [command name]..
