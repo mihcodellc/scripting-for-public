@@ -86,6 +86,13 @@ cat <mail_folder>
 # min hour dom moy dow **** /20 ie every. you can list all values 1-5 or 1,2,3,4,5
 */20 * * * * /home/rms-svc/scripts/move_sql002_backup.sh >/dev/null 2>&1
 
+#redirect 
+ #/dev/null, or the bit bucket, is used as a garbage can for the command line. Unwanted output can be redirected to this location to simply make it disappear.
+./file.sh > nouveau_fichier # a chaque fois
+./file.sh >> fichier_existant # à la fin du fichier fichier_existant
+./file.sh 2> nouveau_fichier #The stderr operator is 2> (for file descriptor 2). error only
+./file.sh 1> nouveau_fichier #The stdout operator is 1> (for file descriptor 1). error only
+
 # https://tecadmin.net/crontab-in-linux-with-20-examples-of-cron-schedule/#:~:text=20%20Useful%20Examples%20for%20Scheduling%20Crontab%201%20Schedule,to%20execute%20on%20selected%20months.%20...%20More%20items
 #edit the crontab -e  -- in nano ctrl+x (exit) + Y/N + Enter  OR ctrl+O (write)
 # <Minute> <Hour> <Day_of_the_Month> <Month_of_the_Year> <Day_of_the_Week> <command>
