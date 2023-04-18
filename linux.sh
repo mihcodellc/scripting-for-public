@@ -16,6 +16,19 @@ sudo netstat -tulpn | grep LISTEN
 #https://doc.ubuntu-fr.org/tutoriel/learn_unix_in_10_minutes
 #https://www.gnu.org/software/bash/manual/bash.html#Looping-Constructs
 #https://linux.die.net/man/1/bash
+#https://www.guru99.com/linux-commands-cheat-sheet.html#:~:text=%20%20%20%20Command%20%20%20,with%20detaile%20...%20%2025%20more%20rows%20
+
+mkdir dossierbello
+cat > jecreeunfichier_executable_pour_bash.sh
+#en commentaire : save ici ie ctrl+d
+cp file1 copie_de_file1 # -r pour un dossier
+mv file1 est_copie_de_file1
+rm supprime_ce_fichier
+chmod u+rwx permis_user_sur_file1
+ls -l #permission sur les objets
+bash execute_cefichier.sh
+chown monktar_ownerde file1 # -R 
+
 
 #https://www.sitepoint.com/cron-jobs/
 # https://linuxhandbook.com/crontab/
@@ -51,6 +64,11 @@ echo "$file has a size of $filesize"
 ls -lth *Archive*.bak # files
 ls -lth LOGSHIPPING_COPY | tail -15   # files in folder named LOGSHIPPING_COPY
 
+#------------------------------------------------------------------------
+#copie between server to your /home/mbello. To just the directory:  cd $HOME OR cd ~ <> cd - => revient au dossier précédent
+scp ./fileName mbello@serverName:~ 
+
+
 #count files+directories without hidden files
 ls | wc -l
 find . -type f | wc -l # only files
@@ -62,12 +80,21 @@ cat <mail_folder>
 > <mail_folder>
 
 
+#https://www.sitepoint.com/cron-jobs/
+# 2>&1 ie both standard output and error output AND /dev/null ie noemail to the owner of this crontab
+# the script does send email to dba. every 20min. the log backup happen every 15min. a "done" file control when to move file
+# min hour dom moy dow **** /20 ie every. you can list all values 1-5 or 1,2,3,4,5
+*/20 * * * * /home/rms-svc/scripts/move_sql002_backup.sh >/dev/null 2>&1
 
 # https://tecadmin.net/crontab-in-linux-with-20-examples-of-cron-schedule/#:~:text=20%20Useful%20Examples%20for%20Scheduling%20Crontab%201%20Schedule,to%20execute%20on%20selected%20months.%20...%20More%20items
 #edit the crontab -e  -- in nano ctrl+x (exit) + Y/N + Enter  OR ctrl+O (write)
 # <Minute> <Hour> <Day_of_the_Month> <Month_of_the_Year> <Day_of_the_Week> <command>
+# min hour dom moy dow **** /20 ie every. you can list all values 1-5 or 1,2,3,4
 # m h  dom mon dow   command
+# 2>&1 ie both standard output and error output AND /dev/null ie noemail to the owner of this crontab
 # */20 * * * * /home/mbello/test.sh >/home/mbello/log # every 20 minutes
+# */20 * * * * /home/mbello/test.sh >/dev/null 2>&1
+
 crontab -e 
 
 
