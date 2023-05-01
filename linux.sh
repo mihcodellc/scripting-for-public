@@ -147,3 +147,9 @@ cat $(find . -name aaa.txt) | grep -i "search_text" > /tmp/db3018.log
 #use find grep + regex regular expressiion -E #https://phoenixnap.com/kb/grep-regex
 cat $(find . -name "*2023*.csv") | grep -i -E 'update.*?deleted' >  /tmp/bello03142023.txt
 
+
+
+#The lsof command returns the process name, the PID, and the user who is running the process
+$ lsof | { head -1 ; grep text.txt ; }
+COMMAND     PID   TID TASKCMD               USER   FD      TYPE             DEVICE  SIZE/OFF       NODE NAME
+less      28423                            john     4r      REG                8,3        75    3146117 /home/john/text.txt
