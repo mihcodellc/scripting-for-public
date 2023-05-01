@@ -149,7 +149,7 @@ cat $(find . -name "*2023*.csv") | grep -i -E 'update.*?deleted' >  /tmp/bello03
 
 
 
-#The lsof command returns the process name, the PID, and the user who is running the process
+#The lsof command returns the process name, the PID, and the user who is running the process: who is using the file
 $ lsof | { head -1 ; grep text.txt ; }
 COMMAND     PID   TID TASKCMD               USER   FD      TYPE             DEVICE  SIZE/OFF       NODE NAME
 less      28423                            john     4r      REG                8,3        75    3146117 /home/john/text.txt
