@@ -8,6 +8,9 @@ nslookup ipaddress
 # listen port
 sudo netstat -tulpn | grep LISTEN
 
+#ip address eq of ipconfig 
+ifconfig -a
+
 #use help in command ligne: 
 #   man [option].. [command name]..
 #    man -k [key_word] # relevant
@@ -45,6 +48,13 @@ sudo su - <exec as user name>
 # bash, ubuntu on temp mounted or Use WinSCP or FileZilla
 sudo mount -t cifs -o username=mbello@mih.com //ipaddress/share_nmae /home/mbello/shared/new3
 
+#attach  the filesystem found on device (which is of type type) at the directory dir
+mount -t type device dir #
+
+#lists all mounted filesystems --  robust and customizable output use findmnt(8)
+findmnt -t cifs,nfs #-t <type> : filters the output by filesystem "cifs`" & nfs
+mount -l
+mount -l -t cifs #-t <type> : filters the output by filesystem "cifs`"
 
 echo "Enter the full path to the file."
 read file
@@ -61,6 +71,7 @@ echo "$file has a size of $filesize"
 # -r sort the output in reverse order
 # -t sort the files and directories by time and date
 # -a show the hidden files
+# -d list directories themselves, not their contents
 # combine with | head -10 => to list top 10
 ls -lth *Archive*.bak # files
 ls -lth LOGSHIPPING_COPY | tail -15   # files in folder named LOGSHIPPING_COPY
