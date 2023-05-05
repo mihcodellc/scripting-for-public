@@ -80,6 +80,7 @@ ls -lth LOGSHIPPING_COPY | tail -15   # files in folder named LOGSHIPPING_COPY
 #------------------------------------------------------------------------
 #copie between server to your /home/mbello. To just the directory:  cd $HOME OR cd ~ <> cd - => revient au dossier précédent
 scp ./fileName mbello@serverName:~ 
+file_name="${signa##*/}" # a strange way to get the file name
 
 
 #count files+directories without hidden files
