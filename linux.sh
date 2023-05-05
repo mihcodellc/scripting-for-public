@@ -150,6 +150,9 @@ rm  -fv  *abc*202207*.trn # rm -r directory
  #return/search file *.trn last modified a day ago order by time
 find -name *.trn -mtime +1 -exec ls -lth "{}" \; # n = exact -n = less than +n = greater than
 
+#find directories
+sudo find -mindepth 1 -maxdepth 3 -type d -ipath '*postgres*'
+
 
 #find search  in file
 cat pattern1*.csv pattern2*.csv | grep -i "search_text" > /tmp/db3018.log
