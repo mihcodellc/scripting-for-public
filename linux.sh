@@ -72,6 +72,7 @@ echo "$file has a size of $filesize"
 # -t sort the files and directories by time and date
 # -a show the hidden files
 # -d list directories themselves, not their contents
+# -1 (The numeric digit “one”.) Force output to be one entry per line. 
 # combine with | head -10 => to list top 10
 ls -lth *Archive*.bak # files
 ls -lth LOGSHIPPING_COPY | tail -15   # files in folder named LOGSHIPPING_COPY
