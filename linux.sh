@@ -80,6 +80,8 @@ ls -lth LOGSHIPPING_COPY | tail -15   # files in folder named LOGSHIPPING_COPY
 #------------------------------------------------------------------------
 #copie between server to your /home/mbello. To just the directory:  cd $HOME OR cd ~ <> cd - => revient au dossier précédent
 scp ./fileName mbello@serverName:~ 
+
+signa=$(find .  -type f -name "ready_for_short_term_FULL.txt" | head -n 1)
 file_name="${signa##*/}" # a strange way to get the file name
 
 
