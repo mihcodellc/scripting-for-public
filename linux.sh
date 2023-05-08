@@ -82,7 +82,17 @@ ls -lth LOGSHIPPING_COPY | tail -15   # files in folder named LOGSHIPPING_COPY
 scp ./fileName mbello@serverName:~ 
 
 signa=$(find .  -type f -name "ready_for_short_term_FULL.txt" | head -n 1)
-file_name="${signa##*/}" # a strange way to get the file name
+
+#How to Find Length of String in Bash Script?
+#https://www.geeksforgeeks.org/how-to-find-length-of-string-in-bash-script/
+ signa=$(find .  -type f -name "ready_for_short_term_*.txt" | head -n 1)
+        lg=${#signa}
+        echo "length is $lg "
+        #can we process ?
+        if [ $lg == 0 ]; then
+                exit 1 # nothing happens
+        fi
+
 
 
 #count files+directories without hidden files
