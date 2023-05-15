@@ -149,6 +149,8 @@ df #du
 du -sh folderPath
 du -sm * | sort -nr | head -15 #each directory summarized -c for MB -n numeric -r reverse
 du -hc # each subdirectory -c total line at the end
+#find all files with the pattern and sum size in column5 /1024/2024 = 1048576 > size in MB
+find -ipath '*DB_name_*.trn' -mtime -2 -exec ls -l "{}" \; | awk '{ sum += $5/1048576 } END{ print sum }'
 
 #remove
 rm  -fv  *abc*202207*.trn # rm -r directory
