@@ -142,10 +142,9 @@ clear
 tail -n 50 log
 exit
 
-#disk space usage files/ directories
-df #du
 
 #size of folder
+df #disk space usage files/ directories
 du -sh folderPath
 du -sm * | sort -nr | head -15 #each directory summarized -c for MB -n numeric -r reverse
 du -hc # each subdirectory -c total line at the end
