@@ -154,6 +154,8 @@ find -ipath '*DB_name_*.trn' -mtime -2 -exec ls -l "{}" \; | awk '{ sum += $5/10
 
 #remove
 rm  -fv  *abc*202207*.trn # rm -r directory
+find -ipath '*.trn' -mtime +10 -delete
+
 
  #-size n => n in b,k,M, G ...bibytes
  #-atime n => File was last accessed n*24 hours ago
