@@ -177,6 +177,7 @@ find -ipath '*.trn' -mtime +10 -delete
  #-regex pattern =>  File name matches regular expression pattern.  This is a match on the whole path
  #return/search file *.trn last modified a day ago order by time
 find -name *.trn -mtime +1 -exec ls -lth "{}" \; # n = exact -n = less than +n = greater than
+find -name '*.*'  -mtime +60  -exec ls {} \;  | sort # backup more than 60
 
 #find directories
 sudo find -mindepth 1 -maxdepth 3 -type d -ipath '*postgres*'
