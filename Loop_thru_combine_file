@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# NOT TESTED YET MBELLO
+
+# Set the output filename
+output_file="combined_file.txt"
+
+# Clear the output file if it already exists
+if [ -e "$output_file" ]; then
+    > "$output_file"
+fi
+
+# Loop through each file in the directory
+for file in *; do
+    # Exclude the output file from being included in the combined file
+    if [ "$file" != "$output_file" ]; then
+        # Append the content of the current file to the output file
+        cat "$file" >> "$output_file"
+    fi
+done
+
+echo "Combined all files into $output_file"
