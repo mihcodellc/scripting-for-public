@@ -122,7 +122,7 @@ cat <mail_folder>
 # min hour dom moy dow **** /20 ie every. you can list all values 1-5 or 1,2,3,4,5
 */20 * * * * /home/rms-svc/scripts/move_sql002_backup.sh >/dev/null 2>&1
 
-#redirect 
+#redirect combine append to other file
  #/dev/null, or the bit bucket, is used as a garbage can for the command line. Unwanted output can be redirected to this location to simply make it disappear.
 ./file.sh > nouveau_fichier # a chaque fois
 ./file.sh >> fichier_existant # à la fin du fichier fichier_existant
