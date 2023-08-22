@@ -144,6 +144,20 @@ crontab -e
 # read crontab content
 crontab -l
 
+#run sql within bash file named myscript.sh
+scripts=/var/lib/postgresql/scripts/
+myscript=db3360
+sqlfile=$myscript.sql
+outfile=$myscript.out
+logfile=$myscript.log
+
+echo "START `date`" > $logfile
+
+psql prod1 -f $sqlfile  -o $outfile
+
+#Run or execute the script in background mode so it does not abort when your session dies:
+nohup ./myscript.sh &
+
 # execute test.sh
 ./test.sh
 clear
