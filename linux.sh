@@ -2,7 +2,7 @@
 #https://www.guru99.com/linux-commands-cheat-sheet.html#:~:text=%20%20%20%20Command%20%20%20,with%20detaile%20...%20%2025%20more%20rows%20
 #https://tldp.org/LDP/Bash-Beginners-Guide/html/
 
-#server name
+#server name network
 nslookup ipaddress
 
 # listen port
