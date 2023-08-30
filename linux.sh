@@ -34,6 +34,13 @@ bash execute_cefichier.sh
 chown monktar_ownerde file1 # -R 
 
 
+##alias 
+compgen -a # list all alias
+alias tout="ls -lth /" # create alias name tout to list all elements in root order by  created time
+compgen -a | alias # list meaning of each alias
+
+
+
 #https://www.sitepoint.com/cron-jobs/
 # https://linuxhandbook.com/crontab/
 # postgres login auth psql-error-fix.md on git at https://gist.github.com/mihcodellc/cdfb22b14e6ae77f9335005a8e926681
