@@ -2,6 +2,17 @@
 #https://www.guru99.com/linux-commands-cheat-sheet.html#:~:text=%20%20%20%20Command%20%20%20,with%20detaile%20...%20%2025%20more%20rows%20
 #https://tldp.org/LDP/Bash-Beginners-Guide/html/
 
+
+--memory cpu, ....
+--https://vitux.com/how-to-use-htop-to-monitor-system-processes-in-ubuntu-20-04/
+F6 : To sort the displaying output. once done esc to return to normal
+F5: To display this relationship in a tree-like structure.exit with F5 one more time
+F3: to search for a specific process and type the name of the search process in the search prompt that displays at the bottom of the terminal window
+F4: to filter process and type the name of the search process in the search prompt that displays at the bottom of the terminal window	
+htop -u mbello -- or F4
+htop -p 70 #-p ie pid -- or F4
+htop -s CPU # sort -- or F6
+
 #server name network
 nslookup ipaddress
 
