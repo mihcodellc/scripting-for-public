@@ -48,6 +48,7 @@ chown monktar_ownerde file1 # -R
 ##alias 
 compgen -a # list all alias
 alias tout="ls -lth /" # create alias name tout to list all elements in root order by  created time
+alias tout # show the definition of "tout" or its meaning
 compgen -a | alias # list meaning of each alias
 
 
