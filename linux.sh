@@ -187,8 +187,8 @@ exit
 
 
 #size of folder
-df #disk space usage files/ directories
-du -sh folderPath
+df or df -h #disk space usage files/ directories -h human read
+du -sh folderPath  # currrent folder size
 du -sm * | sort -nr | head -15 #each directory summarized -c for MB -n numeric -r reverse
 du -hc # each subdirectory -c total line at the end
 #find all files with the pattern and sum size in column5 /1024/2024 = 1048576 > size in MB
