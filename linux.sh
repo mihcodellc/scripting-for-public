@@ -218,12 +218,15 @@ sudo find -mindepth 1 -maxdepth 3 -type d -ipath '*postgres*'
 
 #find search  in file
 cat pattern1*.csv pattern2*.csv | grep -i "search_text" > /tmp/db3018.log
-#better use cat is to display 
+#better use cat is to display for any file ie group matching search string
 cat $(find . -name aaa.txt) | grep -i "search_text" > /tmp/db3018.log
 #use find grep + regex regular expressiion -E #https://phoenixnap.com/kb/grep-regex
 cat $(find . -name "*2023*.csv") | grep -i -E 'update.*?deleted' >  /tmp/bello03142023.txt
-
-
+# searching multiple patterns error or fatal or warn in a file 
+tail -f XYZ.csv | grep -i "error\|fatal\|warn"   
+# search for the words extra and value in the sample.txt file
+# https://phoenixnap.com/kb/grep-multiple-strings
+grep -i  'extra\|value' sample.txt
 
 #The lsof command returns the process name, the PID, and the user who is running the process: who is using the file
 $ lsof | { head -1 ; grep text.txt ; }
