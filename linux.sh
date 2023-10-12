@@ -96,6 +96,9 @@ echo "$file has a size of $filesize"
 ls -lth *Archive*.bak # files
 ls -lth LOGSHIPPING_COPY | tail -15   # files in folder named LOGSHIPPING_COPY
 
+#alternative at ls command stat: both list. stat more powerfull
+find -ipath '*FULL_*.bak' -exec stat -c "%y %s %n"  "{}" \;
+
 # https://linuxhandbook.com/sort-command/
 # sort lines of text files;  With no FILE, or when FILE is -, READ STANDARD INPUT why it can be it can used in pipeline to ls
 sort filename.txt
