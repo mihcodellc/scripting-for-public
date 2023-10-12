@@ -97,15 +97,19 @@ ls -lth *Archive*.bak # files
 ls -lth LOGSHIPPING_COPY | tail -15   # files in folder named LOGSHIPPING_COPY
 
 # https://linuxhandbook.com/sort-command/
-#sort the content of a file
+# sort lines of text files;  With no FILE, or when FILE is -, READ STANDARD INPUT why it can be it can used in pipeline to ls
 sort filename.txt
-#sort by  by the numerals on the third column
+# -k F.C [F,C] 
+#     where F is a field number and C a character position in the field; both are origin 1, and the stop position defaults to the line's end
+#sort by the numerals on the third column
 sort filename.txt -k 3n 
      1. MX Linux 100
      5. Ubuntu 200
      3. Mint 300
      2. Manjaro 400
      4. elementary 500
+ls -l | sort -k 2.3 # sort on 2nd column then 3rd character of this column
+
 #------------------------------------------------------------------------
 #copie between server to your /home/mbello. To just the directory:  cd $HOME OR cd ~ <> cd - => revient au dossier précédent
 scp ./fileName mbello@serverName:~ 
