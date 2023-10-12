@@ -190,8 +190,9 @@ tail -n 50 log
 exit
 
 
-#size of folder
+#size of folder, remember to add folderpath if you need just one
 df or df -h #disk space usage files/ directories -h human read
+df folderpath # current directory
 du -sh folderPath  # currrent folder size
 du -sm * | sort -nr | head -15 #each directory summarized -c for MB -n numeric -r reverse
 du -hc # each subdirectory -c total line at the end
