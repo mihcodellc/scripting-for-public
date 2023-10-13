@@ -98,6 +98,12 @@ ls -lth LOGSHIPPING_COPY | tail -15   # files in folder named LOGSHIPPING_COPY
 
 #alternative at ls command stat: both list. stat more powerfull
 find -ipath '*FULL_*.bak' -exec stat -c "%y %s %n"  "{}" \;
+find -ipath '*FULL_*.bak' -exec stat -c "%y %s %n"  "{}" \; | sort -k 1 | awk '{print $1}' # sort by first column, print first column
+#1 return the date of oldest back file
+echo $(find -ipath '*FULL_*.bak' -exec stat -c "%y %s %n"  "{}" \; | sort -k 1 | head -n 1 | awk '{print $1}') # return the date of oldest back file
+#2 file  modified at date the "!" ie f false check next condition
+find . -type f -newermt 2023-08-18 ! -newermt 2023-08-19
+# 1 & 2 above lead to 
 
 # https://linuxhandbook.com/sort-command/
 # sort lines of text files;  With no FILE, or when FILE is -, READ STANDARD INPUT why it can be it can used in pipeline to ls
