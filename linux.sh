@@ -45,6 +45,18 @@ bash execute_cefichier.sh
 chown monktar_ownerde file1 # -R 
 
 
+##command subtitution
+#1
+number=5
+squared=$(echo $((number * number)))
+echo "The square of $number is $squared"
+#2
+original_file="myfile.txt"
+backup_file="backup_$(date +%Y%m%d%H%M%S).txt"
+cp "$original_file" "$backup_file"
+
+
+
 ##alias 
 compgen -a # list all alias
 alias tout="ls -lth /" # create alias name tout to list all elements in root order by  created time
