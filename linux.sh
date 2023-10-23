@@ -117,6 +117,10 @@ echo $(find -ipath '*FULL_*.bak' -exec stat -c "%y %s %n"  "{}" \; | sort -k 1 |
 find . -type f -newermt 2023-08-18 ! -newermt 2023-08-19
 # 1 & 2 above lead to 
 
+
+##play with date
+echo $(date +%m-%d-%Y -d "2023-10-12 +1 days") # +%m is the format to apply for the output
+
 # https://linuxhandbook.com/sort-command/
 # sort lines of text files;  With no FILE, or when FILE is -, READ STANDARD INPUT why it can be it can used in pipeline to ls
 sort filename.txt
