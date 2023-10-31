@@ -159,6 +159,12 @@ ls | wc -l
 find . -type f | wc -l # only files
 find . -maxdepth 1 -type f | wc -l # files in current directories
 
+#count lines
+wc -l <file_name>
+grep -c '^' <file_name>
+
+
+
 #read mail folder
 cat <mail_folder>
 #purge mail folder
