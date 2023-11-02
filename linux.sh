@@ -298,3 +298,11 @@ while [ "$dest_size_avail" -gt "$total_size_tomove" ] && [ "$count" -gt 0 ]; do
 	dest_size_avail=$(echo "$df_output" | tail -n 1 | awk '{print $4}')
 	
 done
+
+# loop through file set in $list_file_todelete
+ while IFS= read -r filename; do
+                if [ -e "$filename" ]; then
+                        echo "Deleted: $filename $file_size "
+                fi
+        done < "$list_file_todelete"
+
