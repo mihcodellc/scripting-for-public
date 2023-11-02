@@ -300,9 +300,26 @@ while [ "$dest_size_avail" -gt "$total_size_tomove" ] && [ "$count" -gt 0 ]; do
 done
 
 # loop through file set in $list_file_todelete
- while IFS= read -r filename; do
-                if [ -e "$filename" ]; then
-                        echo "Deleted: $filename $file_size "
-                fi
-        done < "$list_file_todelete"
+ # Define the directory to search
+directory="/mnt/c/users/mbello/Documents"
+# Find the oldest creation date
+oldest_date=$(find "$directory" -type f -exec stat --format=%Y {} \; | sort -n | head -n 1)
+# Convert the oldest date to a human-readable format (e.g., YYYY-MM-DD)
+oldest_date_readable=$(date -d "@$oldest_date" +'%Y-%m-%d')
+# Delete files created on the oldest date
+find "$directory" -type f -newermt "$oldest_date_readable" ! -newermt "$oldest_date_readable + 1 day" > $list_file_todelete
+total_size_tomove=0
+while IFS= read -r filename; do
+    if [ -e "$filename" ]; then
+        #rm "$filename"
+        file_size=$(du -b $filename | awk '{print $1}')
+        #size in bytes ie -b
+        total=$((total + file_size))
+        echo "Deleted: $filename $file_size "
+    else
+        echo "File not found: $filename"
+    fi
+done < "$list_file_todelete"
+
+echo "Total size: $total found" 
 
