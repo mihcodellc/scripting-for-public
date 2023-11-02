@@ -323,3 +323,13 @@ done < "$list_file_todelete"
 
 echo "Total size: $total found" 
 
+
+
+#file exists using conditional statements
+file_path="/path/to/your/file.txt"
+if [ -f "$file_path" ]; then #  -f (checks for regular file existence) -e (checks for file or directory existence):
+    echo "Regular file exists: $file_path"
+else
+    echo "File does not exist or is not a regular file: $file_path"
+fi
+
