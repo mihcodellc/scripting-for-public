@@ -269,3 +269,32 @@ grep -i  'extra\|value' sample.txt
 $ lsof | { head -1 ; grep text.txt ; }
 COMMAND     PID   TID TASKCMD               USER   FD      TYPE             DEVICE  SIZE/OFF       NODE NAME
 less      28423                            john     4r      REG                8,3        75    3146117 /home/john/text.txt
+
+
+
+#function
+# Define a function
+my_function() {
+    echo "This is my function!"
+}
+# Call the function
+my_function
+
+# You can also pass arguments to a function
+another_function() {
+    echo "Hello, $1!"
+}
+
+# Call the function with an argument
+another_function "John"
+
+#while with 2 conditions
+while [ "$dest_size_avail" -gt "$total_size_tomove" ] && [ "$count" -gt 0 ]; do
+    another_function # this is a function defined in previous lines
+   	
+	# Use the 'df' command to get disk space information
+	df_output=$(df "$longdir")
+	# Extract the available space from the 'df' command output - The 'tail -n 1' is used to get the last line (the current longdir)
+	dest_size_avail=$(echo "$df_output" | tail -n 1 | awk '{print $4}')
+	
+done
