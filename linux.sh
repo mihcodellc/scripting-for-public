@@ -109,8 +109,8 @@ echo "$file has a size of $filesize"
 ls -lth *Archive*.bak # files
 ls -lth LOGSHIPPING_COPY | tail -15   # files in folder named LOGSHIPPING_COPY
 
-#alternative at ls command stat: both list. stat more powerfull - %y timestamp %s size %n name
-find -ipath '*FULL_*.bak' -exec stat -c "%y %s %n"  "{}" \;
+#alternative at ls command stat: both list. stat more powerfull - %y timestamp %s size %n name  
+find -ipath '*FULL_*.bak' -exec stat -c " %Y %y %s %n"  "{}" \; # %n voir complete list: man stat
 find -ipath '*FULL_*.bak' -exec stat -c "%y %s %n"  "{}" \; | sort -k 1 | awk '{print $1}' # sort by first column, print first column
 #1 return the date of oldest back file
 echo $(find -ipath '*FULL_*.bak' -exec stat -c "%y %s %n"  "{}" \; | sort -k 1 | head -n 1 | awk '{print $1}') # return the date of oldest back file
