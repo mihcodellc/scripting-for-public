@@ -232,7 +232,7 @@ du -hc # each subdirectory -c total line at the end
 find -ipath '*DB_name_*.trn' -mtime -2 -exec ls -l "{}" \; | awk '{ sum += $5/1048576 } END{ print sum }'
 
 #remove
-rm  -fv  *abc*202207*.trn # rm -r directory
+rm  -fv  *abc*202207*.trn # rm -r directory # rm -rf directory # f won't promt
 find -ipath '*.trn' -mtime +10 -delete
 
 
@@ -270,6 +270,11 @@ $ lsof | { head -1 ; grep text.txt ; }
 COMMAND     PID   TID TASKCMD               USER   FD      TYPE             DEVICE  SIZE/OFF       NODE NAME
 less      28423                            john     4r      REG                8,3        75    3146117 /home/john/text.txt
 
+#find a process running a specifc command
+ps aux | grep "cp -nR" # is command contains cp -nR
+
+#kill a process knowing its PID
+kill 2024 # 2024 is the PID
 
 
 #function
