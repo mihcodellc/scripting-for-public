@@ -15,7 +15,9 @@ Copy-DbaLinkedServer -Source instance-test001 -SourceSqlCredential $cred  -Desti
 
 $cred = Get-Credential mydomain\mbello
 
+#Copy databases not in log shipping ie Maintenance, RmsAdmin  
 # need domain user running sql engine, sqlagent - the sharedPath is used to backup then from there restore
+# thus the use of the list of databases in the following command. ReportServer, ReportServerTempDB are not copied by "Copy-DbaDatabase"
 Copy-DbaDatabase -Source instance-test001 -SourceSqlCredential $cred  -Destination instance-test002 -DestinationSqlCredential $cred -database WideWorldImporters,testBello -backupRestore -SharedPath \\instance-test001\Sql_Backup  | out-file -FilePath C:\copylog.txt
 
 
