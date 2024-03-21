@@ -29,6 +29,12 @@ Copy-DbaLogin -Source instance-test001 -SourceSqlCredential $cred  -Destination 
 #existing ones are drop and recreate
 Copy-DbaAgentJob -Source instance-test001 -SourceSqlCredential $cred  -Destination instance-test002 -DestinationSqlCredential $cred -Force | out-file -FilePath C:\copylog.txt
 
+#operator: skip if exists
+Copy-DbaAgentOperator -Source instance2 -Destination instance1
+ 
+#alerts: skip if exists
+Copy-DbaAgentAlert -Source instance2 -Destination instance1
+
 
 #rename the instance
 #https://docs.microsoft.com/en-us/sql/database-engine/install-windows/rename-a-computer-that-hosts-a-stand-alone-instance-of-sql-server?view=sql-server-ver16
