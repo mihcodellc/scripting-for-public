@@ -244,7 +244,7 @@ find -ipath '*.trn' -mtime +10 -delete
  #-empty   => File is empty and is either a regular file or a directory
  #-executable => Matches  files  which  are executable and directories which are searchable
  #-exec command => Execute  command;  true  if 0 status is returned.
- #-regex pattern =>  File name matches regular expression pattern.  This is a match on the whole path
+ #-regex pattern =>  File name matches regular expression pattern.  This is a match on the whole path => ref: T-SQL\"wilcard search regex in dynamic SP.sql"
  #return/search file *.trn last modified a day ago order by time
 find -name *.trn -mtime +1 -exec ls -lth "{}" \; # n = exact -n = less than +n = greater than
 find -name '*.*'  -mtime +60  -exec ls {} \;  | sort # backup more than 60
