@@ -16,6 +16,7 @@ htop -s CPU # sort -- or F6
 #server name network
 nslookup ipaddress
 hostname #windows
+ping -a ipaddress
 
 # listen port
 sudo netstat -tulpn | grep LISTEN
