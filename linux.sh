@@ -342,3 +342,28 @@ else
     echo "File does not exist or is not a regular file: $file_path"
 fi
 
+
+
+# to solve issue with big number 64bits not 32 throws error when using variable use bc ie
+# bc (arbitrary precision calculator)
+# Define variables
+num1=1725260717264
+num2=5
+# Addition
+sum=$(echo "$num1 + $num2" | bc)
+# Subtraction
+difference=$(echo "$num1 - $num2" | bc)
+# Multiplication
+product=$(echo "$num1 * $num2" | bc)
+# Division with floating-point precision
+quotient=$(echo "scale=2; $num1 / $num2" | bc)
+# Exponentiation
+power=$(echo "$num1 ^ $num2" | bc)
+# Print results
+echo "Sum: $sum"
+echo "Difference: $difference"
+echo "Product: $product"
+echo "Quotient: $quotient"
+echo "Power: $power"
+
+
