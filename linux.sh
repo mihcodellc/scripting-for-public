@@ -145,6 +145,8 @@ signa=$(find .  -type f -name "ready_for_short_term_FULL.txt" | head -n 1)
 
 #How to Find Length of String in Bash Script?
 #https://www.geeksforgeeks.org/how-to-find-length-of-string-in-bash-script/
+#for if condition, alwasy prefer [[ cdtion ]] and "$var" to avoid error caused by var empty or unset
+#enable/disable debug mode with set -x / set +x  to print out each cmd as it is executed, helping you identify where the syntax issue occurs
  signa=$(find .  -type f -name "ready_for_short_term_*.txt" | head -n 1)
         lg=${#signa}
         echo "length is $lg "
