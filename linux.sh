@@ -274,6 +274,11 @@ tail -f XYZ.csv | grep -i "error\|fatal\|warn"
 grep -i  'extra\|value' sample.txt
 egrep -i  'extra\|value' sample.txt ## no escape needed
 
+# substring 
+myString="Bello is still learning! "
+ExtractString=${myString:6:13} # extract from index 6, 13 characters
+echo "Here is the extracted string : "$ExtractString" "
+
 
 #The lsof command returns the process name, the PID, and the user who is running the process: who is using the file
 $ lsof | { head -1 ; grep text.txt ; }
