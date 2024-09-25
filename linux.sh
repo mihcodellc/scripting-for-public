@@ -149,6 +149,13 @@ signa=$(find .  -type f -name "ready_for_short_term_FULL.txt" | head -n 1)
 #enable/disable debug mode with set -x / set +x  to print out each cmd as it is executed, helping you identify where the syntax issue occurs
 set -x # enable debug
  signa=$(find .  -type f -name "ready_for_short_term_*.txt" | head -n 1)
+# Check the exit status and negate it of last command
+if [ $? -eq 0 ]; then
+    echo "The last command was successful."
+else
+    echo "The last command failed."
+fi
+ 
 set +x # disable debug
         lg=${#signa}
         echo "length is $lg "
