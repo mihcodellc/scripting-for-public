@@ -164,7 +164,12 @@ set +x # disable debug
                 exit 1 # nothing happens
         fi
 
-
+if [ -z "$new_token" ]; then # -z ie if "new_token" is zero-length? 
+    echo "`date` ERROR: Failed to retrieve authentication token." #>> "$logfile"
+    exit 1
+else
+    echo "`date` Token retrieved successfully." #>> "$logfile"
+fi
 
 #count files+directories without hidden files
 ls | wc -l
