@@ -190,11 +190,7 @@ cat <mail_folder>
 > <mail_folder>
 
 
-#https://www.sitepoint.com/cron-jobs/
-# 2>&1 ie both standard output and error output AND /dev/null ie noemail to the owner of this crontab
-# the script does send email to dba. every 20min. the log backup happen every 15min. a "done" file control when to move file
-# min hour dom moy dow **** /20 ie every. you can list all values 1-5 or 1,2,3,4,5
-*/20 * * * * /home/rms-svc/scripts/move_sql002_backup.sh >/dev/null 2>&1
+
 
 #redirect combine append to other file
  #/dev/null, or the bit bucket, is used as a garbage can for the command line. Unwanted output can be redirected to this location to simply make it disappear.
@@ -202,6 +198,18 @@ cat <mail_folder>
 ./file.sh >> fichier_existant # à la fin du fichier fichier_existant
 ./file.sh 2> nouveau_fichier #The stderr operator is 2> (for file descriptor 2). error only
 ./file.sh 1> nouveau_fichier #The stdout operator is 1> (for file descriptor 1). error only
+
+#***crontab: 
+#Get used to specify the program(eg. specify the program(eg. /bin/bash)) supposed to run your script file in crontab to avoid interruption/error when call from there
+# then log output into myscript.cron.log
+# crontab by default expected a standalone script; if it is not the case then specify the program(eg. /bin/bash your_script.sh)
+* * * *  /bin/bash /home/mbello/scripts/myscript.sh  >> /home/mbello/scripts/myscript.cron.log  2>&1 # you may add instead to avoid email >/dev/null 2>&1
+
+#https://www.sitepoint.com/cron-jobs/
+# 2>&1 ie both standard output and error output AND /dev/null ie noemail to the owner of this crontab
+# the script does send email to dba. every 20min. the log backup happen every 15min. a "done" file control when to move file
+# min hour dom moy dow **** /20 ie every. you can list all values 1-5 or 1,2,3,4,5
+*/20 * * * * /home/rms-svc/scripts/move_sql002_backup.sh >/dev/null 2>&1
 
 # https://tecadmin.net/crontab-in-linux-with-20-examples-of-cron-schedule/#:~:text=20%20Useful%20Examples%20for%20Scheduling%20Crontab%201%20Schedule,to%20execute%20on%20selected%20months.%20...%20More%20items
 #edit the crontab -e  -- in nano ctrl+x (exit) + Y/N + Enter  OR ctrl+O (write)
