@@ -205,6 +205,17 @@ cat <mail_folder>
 # crontab by default expected a standalone script; if it is not the case then specify the program(eg. /bin/bash your_script.sh)
 * * * *  /bin/bash /home/mbello/scripts/myscript.sh  >> /home/mbello/scripts/myscript.cron.log  2>&1 # you may add instead to avoid email >/dev/null 2>&1
 
+#Explicitly Define the Shell in Crontab
+crontab -l #then add or make a similar to the following exists
+SHELL=/bin/bash
+
+#Confirm/verify default shell used in crontab by adding the follwing then cat /tmp/current_cron_shell
+* * * * * echo $SHELL > /tmp/current_cron_shell
+echo $0 # return the current shell
+echo $SHELL # return the current shell
+grep "^$(whoami):" /etc/passwd  # return the current shell
+
+
 #https://www.sitepoint.com/cron-jobs/
 # 2>&1 ie both standard output and error output AND /dev/null ie noemail to the owner of this crontab
 # the script does send email to dba. every 20min. the log backup happen every 15min. a "done" file control when to move file
