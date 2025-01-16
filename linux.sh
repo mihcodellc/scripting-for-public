@@ -13,16 +13,30 @@ htop -u mbello -- or F4
 htop -p 70 #-p ie pid -- or F4
 htop -s CPU # sort -- or F6
 
+--CPU Check
+ top -bn2 | grep "Cpu(s)" | tail -n1 | awk '{print $2 + $4}'
+ mpstat 1 1 | awk '/^Average/ {print 100 - $NF}'
+		-- if sporadic you might want to check system logs for potential issues:
+		sudo journalctl -p warning -u <service-name>  --# suspected service name.
+
+ 
+ -- session driving the CPU - process causing high CPU on ubuntu tools like top, htop, or ps
+  ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -n 20
+
+
 #server name network
-nslookup ipaddress
+nslookup ipaddress #localhost
 hostname #windows
 ping -a ipaddress
+
 
 # listen port
 sudo netstat -tulpn | grep LISTEN
 
 #ip address eq of ipconfig 
-ifconfig -a
+ifconfig -a #deprecated
+ip a
+Hostname -I
 
 #use help in command ligne: 
 #   man [option].. [command name]..
@@ -72,6 +86,22 @@ compgen -a | alias # list meaning of each alias
 # postgres login auth psql-error-fix.md on git at https://gist.github.com/mihcodellc/cdfb22b14e6ae77f9335005a8e926681
 sudo su - <exec as user name>
 # #cd - cd.. - cd ~ - pwd
+
+
+##vi Mode Commands
+q!
+wq
+i : insère avant le curseur
+a : insère après le curseur
+r : remplace 1 caractère
+x : efface un seul caractère
+dd : efface la ligne courante et la place dans un buffer
+u : annule la dernière commande
+yy : copie la ligne courante dans le buffer
+p : colle le contenu du buffer après la ligne courante
+^g : affiche le numéro de la ligne
+h,j,k,l : respectivement gauche, bas, haut et droite ; les flèches de direction fonctionnent aussi…
+
 
 
 # https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/
