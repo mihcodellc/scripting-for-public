@@ -219,8 +219,9 @@ cat <mail_folder>
 #purge mail folder
 > <mail_folder>
 
-each mail tool has its way of checking if it exists using "which <key>". to list all mail tools:
-dpkg -l | grep mail
+each mail tool has its way of checking if it exists using "which <key>": mailutils, postfix, ssmtp
+	to list all mail tools:
+		dpkg -l | grep mail
 
 echo "This is a test email" | mail -s "Test Email" mbello@mih.com
 sudo tail /var/log/mail.log
