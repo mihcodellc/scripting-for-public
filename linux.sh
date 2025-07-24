@@ -31,7 +31,7 @@ ping -a ipaddress
 
 #remote server name from ip
 [System.Net.Dns]::GetHostEntry("172.x.x.x").HostName
-Resolve-DnsName -Name "172.16.10.38" -Type PTR | Select-Object -ExpandProperty NameHost
+Resolve-DnsName -Name "172.x.x.x" -Type PTR | Select-Object -ExpandProperty NameHost
 
 
 # listen port
