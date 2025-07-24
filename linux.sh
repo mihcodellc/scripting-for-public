@@ -29,6 +29,9 @@ nslookup ipaddress #localhost
 hostname #windows
 ping -a ipaddress
 
+#remote server name from ip
+[System.Net.Dns]::GetHostEntry("172.x.x.x").HostName
+
 
 # listen port
 sudo netstat -tulpn | grep LISTEN
